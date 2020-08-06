@@ -4,6 +4,6 @@
 
     <item android:title="Lighting" />
     <item android:title="Access" />
-    <item android:title="Climate" />
+    <item android:title="Климат" />
     <item android:title="Energy saving" />
 </menu>
