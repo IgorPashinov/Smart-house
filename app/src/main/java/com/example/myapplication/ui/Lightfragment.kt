@@ -16,3 +16,19 @@ class Lightfragment:Fragment() {
         return inflater.inflate(R.layout.fragment_light, container, false)
     }
 }
+
+
+private var isClick = false
+override fun onCreateView(){
+    val view = Infalter.inflate(R.layout. fragment_light.container, false)
+    val btn = view.findViewById(R.id.btn)
+    btn.set0ClickListener{
+        isClick = true
+        if(isClick) {
+            btn.text = "Вкл"
+        }else{
+            btn.text = "Выкл"
+        }
+    }
+    return view
+}
