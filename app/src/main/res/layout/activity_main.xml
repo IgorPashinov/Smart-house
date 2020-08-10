@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Smart Home"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:paddingTop="20dp"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="Lighting" />
 
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="Access" />
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="Climate" />
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="Energy saving" />
-</LinearLayout>
+
+
+
+</FrameLayout>
