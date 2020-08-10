@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 
@@ -15,7 +16,7 @@ class Lightfragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_light, container, false)
-        val btn = view.findViewById(R.id.btn)
+        val btn = findViewById<Button>(R.id.btn)
         btn.set0nClickListener{
             isClick = true
             if(isClick) {
