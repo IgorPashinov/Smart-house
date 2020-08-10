@@ -9,23 +9,26 @@ import retrofit2.http.POST
 
 interface ApiServer {
 
-    @GET( "get /climate/manual mode/bake")
+    @GET( "get/climate/manualmode/bake")
     suspend fun getclimatemanualmodebake():ClimateBake
 
-    @POST( "set /climate/manual mode/bake")
+    @POST( "set/climate/manualmode/bake")
     suspend fun setclimatemanualmodebake(bake: ClimateBake)
 
-    @GET( "get /climate/manual mode/humidifier")
+    @GET( "get/climate/manualmode/humidifier")
     suspend fun getclimatemanualmodehumidifier():ClimateHumidifier
 
-    @POST( "set /climate/manual mode/humidifier")
+    @POST( "set/climate/manualmode/humidifier")
     suspend fun setclimatemanualmodehumidifier(humidifier: ClimateHumidifier)
 
-    @GET( "get/climate/manul mode/window")
+    @GET( "get/climate/manulmode/window")
     suspend fun getclimatemanulmodewindow():ClimateWindow
 
-    @POST( "set/climate/manul mode/window")
+    @POST( "set/climate/manulmode/window")
     suspend fun setclimatemanulmodewindow(window: ClimateWindow)
 
+  /*  @GET( "get/Smart home/access")
+    suspend fun getSmarthomeaccess():
 
+*/
 }
