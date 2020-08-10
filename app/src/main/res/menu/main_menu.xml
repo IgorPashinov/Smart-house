@@ -2,8 +2,8 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Lighting" />
-    <item android:title="Access" />
+    <item android:title="Освещение" />
+    <item android:title="Доступ" />
     <item android:title="Климат" />
     <item android:title="Energy saving" />
 </menu>
