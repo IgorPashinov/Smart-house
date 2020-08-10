@@ -18,9 +18,4 @@ object WebClient {
         .addConverterFactory(GsonConverterFactory.create() )
         .build()
         .create(ApiServer::class.java)
-
-   suspend fun getClimateManualModeBake() : ClimateBake {
-
-        return withContext
-    }
 }
