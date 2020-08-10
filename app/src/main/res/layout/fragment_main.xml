@@ -16,7 +16,7 @@
 
         />
 
-    <com.google.android.material.button.MaterialButton
+      <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -24,13 +24,14 @@
         android:textSize="20sp"
         app:icon="@drawable/ic_lighting" />
 
+
     <ImageButton
         android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_lighting"   />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_access" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_climate"/>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
