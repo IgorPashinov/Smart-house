@@ -53,6 +53,9 @@ class Lightfragment:Fragment() {
             }else{
                 btn.text = "Выкл"
             }
+            val illumination=WebClient.getIllumination()
+            rangeSeekbar1.setMinValue(illumination.minIllumination.toFloat())
+            rangeSeekbar1.setMaxValue(illumination.maxIllumination.toFloat())
         }
 
     }
