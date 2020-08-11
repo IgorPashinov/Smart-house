@@ -1,8 +1,7 @@
-/*package com.example.myapplication.data
+package com.example.myapplication.data
 
-class AccessDoor {
-    val door: Boolean,
-            val
-}
+class AccessDoor (
+    val door: Boolean
 
- */
+)
+

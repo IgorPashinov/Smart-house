@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.myapplication.ui.MainFragment
+import com.example.myapplication.ui.Lightfragment
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,8 +15,6 @@ class MainActivity : AppCompatActivity() {
             replace(MainFragment())
         }
     }
-
-
 
     fun replace(fragment: Fragment) {
         supportFragmentManager
@@ -33,5 +33,6 @@ class MainActivity : AppCompatActivity() {
     fun back() {
         supportFragmentManager.popBackStack()
     }
+
 
 }

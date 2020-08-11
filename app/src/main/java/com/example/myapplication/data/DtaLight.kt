@@ -2,7 +2,7 @@ package com.example.myapplication.data
 
 class Turnoforturnon(
     val state: Boolean,
-    val brigtness: Int
+    val brightness: Int
 )
 
 class DataIlumination(

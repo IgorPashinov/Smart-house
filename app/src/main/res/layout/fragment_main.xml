@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:paddingTop="20dp"
         android:text="Smart Home"
-        android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:paddingTop="20dp"
+        android:textSize="20sp"
 
         />
 
-      <Button
+    <Button
+        android:id="@+id/light"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -26,12 +27,13 @@
 
 
     <ImageButton
-        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_lighting"   />
+        android:background="@null"
+        app:srcCompat="@drawable/ic_lighting" />
 
     <Button
+        android:id="@+id/access"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -40,12 +42,13 @@
         app:icon="@drawable/ic_access" />
 
     <ImageButton
-        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
         app:srcCompat="@drawable/ic_access" />
 
     <Button
+        android:id="@+id/climate"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -54,10 +57,10 @@
         app:icon="@drawable/ic_climate" />
 
     <ImageButton
-        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_climate"/>
+        android:background="@null"
+        app:srcCompat="@drawable/ic_climate" />
 
     <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -68,10 +71,10 @@
         app:icon="@drawable/ic_energy" />
 
     <ImageButton
-        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_energy"/>
+        android:background="@null"
+        app:srcCompat="@drawable/ic_energy" />
 
 
 </LinearLayout>

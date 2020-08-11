@@ -1,9 +1,7 @@
 package com.example.myapplication.web
 
-import com.example.myapplication.data.ClimateBake
-import com.example.myapplication.data.ClimateHumidifier
-import com.example.myapplication.data.ClimateWindow
-import com.example.myapplication.ui.ClimateFragment
+
+import com.example.myapplication.data.*
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
@@ -12,6 +10,8 @@ import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+
 object WebClient {
 
     val gson = GsonBuilder()
@@ -19,8 +19,8 @@ object WebClient {
         .create()
 
     val api = Retrofit.Builder()
-        .baseUrl("http://ms.newtonbox.ru/")
-        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl("https://ms.newtonbox.ru/smarthome1/") // Адрес API, нужно узнать у команды
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(ApiServer::class.java)
 
@@ -57,5 +57,66 @@ object WebClient {
             api.setclimatemanulmodewindow(window)
         }
     }
+
+    suspend fun getclimateautomodetemperatura(): AutoModeTemperatura {
+        return withContext(Dispatchers.IO) {
+            api.getclimateautomodetemperatura()
+        }
+    }
+
+    suspend fun setclimateautomodetemperatura(temperatura: AutoModeTemperatura) {
+        return withContext(Dispatchers.IO) {
+            api.setclimateautomodetemperatura(temperatura)
+        }
+    }
+
+    suspend fun getclimateautomodevlaznost(): AutoModeVlaznost {
+        return withContext(Dispatchers.IO) {
+            api.getclimateautomodevlaznost()
+        }
+    }
+
+    suspend fun setclimateautomodevlaznost(vlaznost: AutoModeVlaznost) {
+        return withContext(Dispatchers.IO) {
+            api.setclimateautomodevlaznost(vlaznost)
+        }
+    }
+
+
+    suspend fun setaccesscall(accessDoor: AccessDoor) {
+        return withContext(Dispatchers.IO) {
+            api.setaccesscall(accessDoor)
+        }
+    }
+
+    suspend fun getTurnoforturnon(): Turnoforturnon{
+        return withContext(Dispatchers.IO){
+            api.getlightturnoforturnon()
+        }
+    }
+    suspend fun setTurnoforturnon(state: Turnoforturnon){
+        return withContext(Dispatchers.IO) {
+            api.setlightturnoforturnon(state)
+        }
+    }
+
+    suspend fun getIllumination(): DataIlumination {
+        return withContext(Dispatchers.IO) {
+            api.getlightDataIllumination()
+        }
+    }
+
+    suspend fun setIllumination(state: DataIlumination) {
+        return withContext(Dispatchers.IO) {
+            api.setlightturnoforturnon(state)
+        }
+    }
+
+    suspend fun getDataHistory(): DataLightAll {
+        return withContext(Dispatchers.IO) {
+            api. getLightHistory()
+        }
+    }
+
 
 }

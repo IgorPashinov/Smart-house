@@ -5,5 +5,5 @@
     <item android:title="Освещение" />
     <item android:title="Доступ" />
     <item android:title="Климат" />
-    <item android:title="Energy saving" />
+    <item android:title="Энергосбережение" />
 </menu>
