@@ -10,24 +10,16 @@
         android:text="Включить"
         android:textSize="18sp" />
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Максимальная яркость"
-        android:layout_marginTop="80dp"
-        android:textSize="18sp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Минимальная яркость"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:textSize="18sp"/>
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:max="100"
-        />
+    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+    android:id="@+id/rangeSeekbar1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
 </LinearLayout>
