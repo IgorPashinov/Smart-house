@@ -16,11 +16,11 @@ interface ApiService {
     suspend fun setlightturnoforturnon(@Body
     state: Turnoforturnon)
 
-    @GET("get/light/DataIllumination")
+    @GET("get/light/illumination")
     suspend fun getlightDataIllumination(): DataIlumination
 
-    @POST("set/light/turn_of_or_turn_on")
-    suspend fun setlightturnoforturnon(@Body
+    @POST("set/light/illumination")
+    suspend fun setLightDataIllumination(@Body
     state: DataIlumination )
 
 

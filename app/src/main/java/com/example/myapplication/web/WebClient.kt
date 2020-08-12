@@ -8,6 +8,9 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import okhttp3.OkHttp
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,9 +22,13 @@ object WebClient {
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
 
+    var logging: HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    val okhttp = OkHttpClient.Builder()
+        .addInterceptor(logging)
+        .build()
 
     val api = Retrofit.Builder()
-        .baseUrl("https://ms.newtonbox.ru/smarthome1/") // Адрес API, нужно узнать у команды
+        .baseUrl("https://ms.newtonbox.ru/smarthome1/").client(okhttp) // Адрес API, нужно узнать у команды
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(ApiService::class.java)
@@ -45,7 +52,7 @@ object WebClient {
 
     suspend fun setIllumination(state: DataIlumination) {
         return withContext(Dispatchers.IO) {
-            api.setlightturnoforturnon(state)
+            api.setLightDataIllumination(state)
         }
     }
 
