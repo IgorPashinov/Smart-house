@@ -20,11 +20,11 @@ interface ApiServer {
     @POST("set/climate/manualmode/humidifier")
     suspend fun setclimatemanualmodehumidifier(@Body humidifier: ClimateHumidifier)
 
-    @GET("get/climate/manulmode/window")
-    suspend fun getclimatemanulmodewindow(): ClimateWindow
+    @GET("get/climate/manualmode/window")
+    suspend fun getclimatemanualmodewindow(): ClimateWindow
 
-    @POST("set/climate/manulmode/window")
-    suspend fun setclimatemanulmodewindow(@Body window: ClimateWindow)
+    @POST("set/climate/manualmode/window")
+    suspend fun setclimatemanualmodewindow(@Body window: ClimateWindow)
 
     @POST("set/access/call")
     suspend fun setaccesscall(@Body accessDoor: AccessDoor)
@@ -59,9 +59,14 @@ interface ApiServer {
         @Body
         state: DataIlumination
     )
-
+   /* @GET("get/access/history")
+    suspend fun getaccesshistory
+*/
 
     @GET("get/light/history")
     suspend fun getLightHistory(): DataLightAll
+
+    @POST ("/set/token")
+    suspend fun setToken(token:TokenRequest)
 
 }

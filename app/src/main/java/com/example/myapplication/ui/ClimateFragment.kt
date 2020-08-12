@@ -22,27 +22,34 @@ class ClimateFragment: Fragment() {
     ): View? {
         return inflater.inflate(R.layout.slot_climate, container, false)
     }
-var bake = false
+    var bake = false
     var humidifier = false
     var window = false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
         buttonbake.setOnClickListener {
             lifecycleScope.launch {
-                WebClient.setclimatemanualmodebake(ClimateBake(!bake,0,0))
+                WebClient.setclimatemanualmodebake(ClimateBake(!bake))
+                
             }
         }
         buttonhumidifier.setOnClickListener {
             lifecycleScope.launch {
-                WebClient.setclimatemanualmodehumidifier(ClimateHumidifier(!humidifier,0,0))
+                WebClient.setclimatemanualmodehumidifier(ClimateHumidifier(!humidifier))
             }
         }
         buttonwindow.setOnClickListener {
             lifecycleScope.launch {
-                WebClient.setclimatemanualmodewindow(ClimateWindow(!window,0,0))
+                WebClient.setclimatemanualmodewindow(ClimateWindow(!window))
             }
         }
 
+    }
+    fun getBakeState(){
+        lifecycleScope.launch {
+            val bakestate = WebClient.getclimatemanualmodebake()
+            bake = bakestate.bake
+        }
     }
     fun update(){
             lifecycleScope.launch {
