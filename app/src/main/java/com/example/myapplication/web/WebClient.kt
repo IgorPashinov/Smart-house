@@ -29,7 +29,7 @@ object WebClient {
         .baseUrl("https://ms.newtonbox.ru/smarthome1/").client(okhttp) // Адрес API, нужно узнать у команды
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
-        .create(ApiServer::class.java)
+        .create(ApiService::class.java)
 
     suspend fun getclimatemanualmodebake(): ClimateBake {
         return withContext(Dispatchers.IO) {
