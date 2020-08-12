@@ -6,7 +6,6 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -29,7 +28,7 @@ object WebClient {
         .baseUrl("https://ms.newtonbox.ru/smarthome1/").client(okhttp) // Адрес API, нужно узнать у команды
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
-        .create(ApiServer::class.java)
+        .create(ApiService::class.java)
 
     suspend fun getclimatemanualmodebake(): ClimateBake {
         return withContext(Dispatchers.IO) {
@@ -115,7 +114,7 @@ object WebClient {
 
     suspend fun setIllumination(state: DataIlumination) {
         return withContext(Dispatchers.IO) {
-            api.setLightDataIllumination(state)
+            api.setlightDataIllumination(state)
         }
     }
 
