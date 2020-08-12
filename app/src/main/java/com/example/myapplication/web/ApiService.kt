@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 
-interface ApiServer {
+interface ApiService {
 
     @GET("get/climate/manualmode/bake")
     suspend fun getclimatemanualmodebake(): ClimateBake
@@ -51,11 +51,11 @@ interface ApiServer {
         state: Turnoforturnon
     )
 
-    @GET("get/light/DataIllumination")
+    @GET("get/light/Illumination")
     suspend fun getlightDataIllumination(): DataIlumination
 
-    @POST("set/light/turn_of_or_turn_on")
-    suspend fun setlightturnoforturnon(
+    @POST("set/light/Illumination")
+    suspend fun setlightDataIllumination(
         @Body
         state: DataIlumination
     )

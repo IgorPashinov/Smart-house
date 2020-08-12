@@ -19,6 +19,7 @@ object WebClient {
     val gson = GsonBuilder()
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
+
     var logging: HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     val okhttp = OkHttpClient.Builder()
         .addInterceptor(logging)
@@ -114,7 +115,7 @@ object WebClient {
 
     suspend fun setIllumination(state: DataIlumination) {
         return withContext(Dispatchers.IO) {
-            api.setlightturnoforturnon(state)
+            api.setlightDataIllumination(state)
         }
     }
 

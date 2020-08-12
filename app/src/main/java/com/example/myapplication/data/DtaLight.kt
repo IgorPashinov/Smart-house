@@ -1,5 +1,7 @@
 package com.example.myapplication.data
 
+import com.google.gson.annotations.SerializedName
+
 class Turnoforturnon(
     val state: Boolean,
     val brightness: Int
@@ -7,6 +9,8 @@ class Turnoforturnon(
 
 class DataIlumination(
     val state: Boolean,
-    val minIllumination: Int,
-    val maxIllumination: Int
+    @SerializedName("set the minimum illumination")
+    val minIllumination: Float,
+    @SerializedName("set the maximum illumination")
+    val maxIllumination: Float
 )
