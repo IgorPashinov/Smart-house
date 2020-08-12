@@ -1,9 +1,7 @@
 package com.example.myapplication.web
 
-import com.example.myapplication.data.DataHistory
-import com.example.myapplication.data.DataIlumination
-import com.example.myapplication.data.DataLightAll
-import com.example.myapplication.data.Turnoforturnon
+
+import com.example.myapplication.data.*
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +29,72 @@ object WebClient {
         .baseUrl("https://ms.newtonbox.ru/smarthome1/").client(okhttp) // Адрес API, нужно узнать у команды
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
-        .create(ApiService::class.java)
+        .create(ApiServer::class.java)
+
+    suspend fun getclimatemanualmodebake(): ClimateBake {
+        return withContext(Dispatchers.IO) {
+            api.getclimatemanualmodebake()
+        }
+    }
+
+    suspend fun setclimatemanualmodebake(bake: ClimateBake) {
+        return withContext(Dispatchers.IO) {
+            api.setclimatemanualmodebake(bake)
+        }
+    }
+    suspend fun getclimatemanualmodehumidifier(): ClimateHumidifier {
+        return withContext(Dispatchers.IO) {
+            api.getclimatemanualmodehumidifier()
+        }
+    }
+
+    suspend fun setclimatemanualmodehumidifier(humidifier: ClimateHumidifier) {
+        return withContext(Dispatchers.IO) {
+            api.setclimatemanualmodehumidifier(humidifier)
+        }
+    }
+    suspend fun getclimatemanualmodewindow(): ClimateWindow {
+        return withContext(Dispatchers.IO) {
+            api.getclimatemanulmodewindow()
+        }
+    }
+
+    suspend fun setclimatemanualmodewindow(window: ClimateWindow) {
+        return withContext(Dispatchers.IO) {
+            api.setclimatemanulmodewindow(window)
+        }
+    }
+
+    suspend fun getclimateautomodetemperatura(): AutoModeTemperatura {
+        return withContext(Dispatchers.IO) {
+            api.getclimateautomodetemperatura()
+        }
+    }
+
+    suspend fun setclimateautomodetemperatura(temperatura: AutoModeTemperatura) {
+        return withContext(Dispatchers.IO) {
+            api.setclimateautomodetemperatura(temperatura)
+        }
+    }
+
+    suspend fun getclimateautomodevlaznost(): AutoModeVlaznost {
+        return withContext(Dispatchers.IO) {
+            api.getclimateautomodevlaznost()
+        }
+    }
+
+    suspend fun setclimateautomodevlaznost(vlaznost: AutoModeVlaznost) {
+        return withContext(Dispatchers.IO) {
+            api.setclimateautomodevlaznost(vlaznost)
+        }
+    }
+
+
+    suspend fun setaccesscall(accessDoor: AccessDoor) {
+        return withContext(Dispatchers.IO) {
+            api.setaccesscall(accessDoor)
+        }
+    }
 
     suspend fun getTurnoforturnon(): Turnoforturnon{
         return withContext(Dispatchers.IO){

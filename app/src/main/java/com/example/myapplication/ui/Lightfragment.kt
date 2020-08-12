@@ -22,6 +22,11 @@ class Lightfragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
+        return null
+
         val view = inflater.inflate(R.layout.fragment_light, container, false)
 
 
