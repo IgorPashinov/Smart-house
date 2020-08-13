@@ -14,57 +14,47 @@
         android:text="Климат"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:paddingTop="20dp"
-        ></TextView>
+        android:paddingTop="20dp" />
 
-    <Button
-        android:id="@+id/buttonrezim"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="194dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="455dp"
-        android:text="Режим"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonznachenia"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="303dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="324dp"
-        android:text="Последние значение температуры и влажности"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonrezim"
-        app:layout_constraintVertical_bias="0.0" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1 "
+     android:orientation="vertical"
+        android:gravity="center"
+>
 
-    <Button
-        android:id="@+id/buttongraphs"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="194dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="172dp"
-        android:text="Графики"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonznachenia" />
+        <Button
+            android:id="@+id/buttonznachenia"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="303dp"
+            android:layout_height="84dp"
+            android:text="Последние значение температуры и влажности"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonrezimauto"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="194dp"
+            android:layout_height="63dp"
+            android:text="Автномный режим"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/buttonrezimruchnoi"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="194dp"
+            android:layout_height="63dp"
+            android:text="Принудительный режим"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttongraphs"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="194dp"
+            android:layout_height="63dp"
+            android:text="Графики"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </LinearLayout>

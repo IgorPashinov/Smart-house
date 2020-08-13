@@ -30,17 +30,19 @@ class ClimateFragment: Fragment() {
         buttonbake.setOnClickListener {
             lifecycleScope.launch {
                 WebClient.setclimatemanualmodebake(ClimateBake(!bake))
-                
+                update()
             }
         }
         buttonhumidifier.setOnClickListener {
             lifecycleScope.launch {
                 WebClient.setclimatemanualmodehumidifier(ClimateHumidifier(!humidifier))
+                update()
             }
         }
         buttonwindow.setOnClickListener {
             lifecycleScope.launch {
                 WebClient.setclimatemanualmodewindow(ClimateWindow(!window))
+                update()
             }
         }
 
