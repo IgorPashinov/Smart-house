@@ -15,6 +15,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Температура"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/GraphTrmperatura"
@@ -24,6 +27,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Влажность"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/GraphVlaznost"
@@ -33,6 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Давление"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/GraphDavlenie"
@@ -42,6 +51,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CO2"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/GraphC02"
