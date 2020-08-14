@@ -51,10 +51,10 @@ interface ApiService {
         state: Turnoforturnon
     )
 
-    @GET("get/light/Illumination")
+    @GET("get/light/illumination")
     suspend fun getlightDataIllumination(): DataIlumination
 
-    @POST("set/light/Illumination")
+    @POST("set/light/illumination")
     suspend fun setlightDataIllumination(
         @Body
         state: DataIlumination
@@ -67,8 +67,8 @@ interface ApiService {
     @GET("get/light/history")
     suspend fun getLightHistory(): DataLightAll
 
-    @POST("/set/token")
-    suspend fun setToken(token: TokenRequest)
+    @POST ("/set/token")
+    suspend fun setToken(@Body token:TokenRequest)
 
     @GET("get/temperatura/history")
     suspend fun gettemperaturahistory(): ClimateHistory
