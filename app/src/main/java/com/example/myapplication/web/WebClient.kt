@@ -13,25 +13,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-
 object WebClient {
 
     val gson = GsonBuilder()
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
 
-    var logging: HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    var logging: HttpLoggingInterceptor =
+        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     val okhttp = OkHttpClient.Builder()
         .addInterceptor(logging)
         .build()
 
     val api = Retrofit.Builder()
-        .baseUrl("https://ms.newtonbox.ru/smarthome1/").client(okhttp) // Адрес API, нужно узнать у команды
+        .baseUrl("https://ms.newtonbox.ru/smarthome1/")
+        .client(okhttp) // Адрес API, нужно узнать у команды
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(ApiService::class.java)
 
-    suspend fun getclimatemanualmodebake(): ClimateBake {
+    suspend fun getclimatemanualmodebake(): ClimateState {
         return withContext(Dispatchers.IO) {
             api.getclimatemanualmodebake()
         }
@@ -42,7 +43,8 @@ object WebClient {
             api.setclimatemanualmodebake(bake)
         }
     }
-    suspend fun getclimatemanualmodehumidifier(): ClimateHumidifier {
+
+    suspend fun getclimatemanualmodehumidifier(): ClimateState {
         return withContext(Dispatchers.IO) {
             api.getclimatemanualmodehumidifier()
         }
@@ -53,7 +55,8 @@ object WebClient {
             api.setclimatemanualmodehumidifier(humidifier)
         }
     }
-    suspend fun getclimatemanualmodewindow(): ClimateWindow {
+
+    suspend fun getclimatemanualmodewindow(): ClimateState {
         return withContext(Dispatchers.IO) {
             api.getclimatemanualmodewindow()
         }
@@ -96,12 +99,13 @@ object WebClient {
         }
     }
 
-    suspend fun getTurnoforturnon(): Turnoforturnon{
-        return withContext(Dispatchers.IO){
+    suspend fun getTurnoforturnon(): Turnoforturnon {
+        return withContext(Dispatchers.IO) {
             api.getlightturnoforturnon()
         }
     }
-    suspend fun setTurnoforturnon(state: Turnoforturnon){
+
+    suspend fun setTurnoforturnon(state: Turnoforturnon) {
         return withContext(Dispatchers.IO) {
             api.setlightturnoforturnon(state)
         }
@@ -121,13 +125,38 @@ object WebClient {
 
     suspend fun getDataHistory(): DataLightAll {
         return withContext(Dispatchers.IO) {
-            api. getLightHistory()
+            api.getLightHistory()
         }
     }
 
-suspend fun setToken(token: TokenRequest){
-    return withContext(Dispatchers.IO){
-        api.setToken(token)
+    suspend fun setToken(token: TokenRequest) {
+        return withContext(Dispatchers.IO) {
+            api.setToken(token)
+        }
     }
-}
+    suspend fun gettemperaturahistory(): ClimateHistory {
+        return withContext(Dispatchers.IO) {
+            api.gettemperaturahistory()
+        }
+    }
+    suspend fun getvlaznosthistory(): ClimateHistory {
+        return withContext(Dispatchers.IO) {
+            api.getvlaznosthistory()
+        }
+    }
+    suspend fun getCO2history(): ClimateHistory {
+        return withContext(Dispatchers.IO) {
+            api.getCO2history()
+        }
+    }
+    suspend fun getaccesshistory(): AccessHistory {
+        return withContext(Dispatchers.IO) {
+            api.getaccesshistory()
+        }
+    }
+    suspend fun getclimate(): Climate {
+        return withContext(Dispatchers.IO) {
+            api.getclimate()
+        }
+    }
 }

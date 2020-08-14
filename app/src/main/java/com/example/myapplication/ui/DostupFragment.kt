@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.AccessDoor
 import com.example.myapplication.web.WebClient
@@ -27,6 +28,6 @@ class DostupFragment: Fragment() {
                 WebClient.setaccesscall(AccessDoor(true))
             }
         }
-
+button3.setOnClickListener {  (activity as? MainActivity)?.add(HistoryDoorFragment()) }
     }
 }

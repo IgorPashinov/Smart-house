@@ -47,20 +47,14 @@ class ClimateFragment: Fragment() {
         }
 
     }
-    fun getBakeState(){
-        lifecycleScope.launch {
-            val bakestate = WebClient.getclimatemanualmodebake()
-            bake = bakestate.bake
-        }
-    }
     fun update(){
             lifecycleScope.launch {
                 val bakestate = WebClient.getclimatemanualmodebake()
                 val humidifierstate = WebClient.getclimatemanualmodehumidifier()
                 val windowstate = WebClient.getclimatemanualmodewindow()
-                bake= bakestate.bake
-                humidifier = humidifierstate.humidifier
-                window = windowstate.window
+                bake= bakestate.state
+                humidifier = humidifierstate.state
+                window = windowstate.state
                 if (bake){
                     buttonbake.text="Выключить"
                 }

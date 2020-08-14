@@ -9,19 +9,19 @@ import retrofit2.http.POST
 interface ApiService {
 
     @GET("get/climate/manualmode/bake")
-    suspend fun getclimatemanualmodebake(): ClimateBake
+    suspend fun getclimatemanualmodebake(): ClimateState
 
     @POST("set/climate/manualmode/bake")
     suspend fun setclimatemanualmodebake(@Body bake: ClimateBake)
 
     @GET("get/climate/manualmode/humidifier")
-    suspend fun getclimatemanualmodehumidifier(): ClimateHumidifier
+    suspend fun getclimatemanualmodehumidifier(): ClimateState
 
     @POST("set/climate/manualmode/humidifier")
     suspend fun setclimatemanualmodehumidifier(@Body humidifier: ClimateHumidifier)
 
     @GET("get/climate/manualmode/window")
-    suspend fun getclimatemanualmodewindow(): ClimateWindow
+    suspend fun getclimatemanualmodewindow(): ClimateState
 
     @POST("set/climate/manualmode/window")
     suspend fun setclimatemanualmodewindow(@Body window: ClimateWindow)
@@ -59,14 +59,26 @@ interface ApiService {
         @Body
         state: DataIlumination
     )
-   /* @GET("get/access/history")
-    suspend fun getaccesshistory
-*/
+
+    @GET("get/access/history")
+    suspend fun getaccesshistory(): AccessHistory
+
 
     @GET("get/light/history")
     suspend fun getLightHistory(): DataLightAll
 
-    @POST ("/set/token")
-    suspend fun setToken(token:TokenRequest)
+    @POST("/set/token")
+    suspend fun setToken(token: TokenRequest)
 
+    @GET("get/temperatura/history")
+    suspend fun gettemperaturahistory(): ClimateHistory
+
+    @GET("get/vlaznost/history")
+    suspend fun getvlaznosthistory(): ClimateHistory
+
+    @GET("get/CO2/history")
+    suspend fun getCO2history(): ClimateHistory
+
+    @GET( "get/climate")
+    suspend fun getclimate():Climate
 }

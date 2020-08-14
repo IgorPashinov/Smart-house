@@ -1,7 +1,9 @@
 package com.example.myapplication.data
 
 class AccessHistory (
-    val door: Boolean,
-val date:  String
+    val history: Array<AccessHistoryItem>
 
+)
+class AccessHistoryItem (
+    val date: String
 )
