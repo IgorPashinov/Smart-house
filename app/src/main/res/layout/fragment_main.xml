@@ -68,6 +68,7 @@
         android:layout_height="wrap_content"
         android:text="Энергосбережение"
         android:textSize="20sp"
+        android:id="@+id/energy"
         app:icon="@drawable/ic_energy" />
 
     <ImageButton

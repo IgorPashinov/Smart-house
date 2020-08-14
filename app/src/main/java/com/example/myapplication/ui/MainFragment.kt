@@ -28,5 +28,8 @@ class MainFragment: Fragment() {
         climate.setOnClickListener {
             (activity as? MainActivity)?.add(MebuClimate())
         }
+        energy.setOnClickListener {
+            (activity as? MainActivity)?.add(Energyfragment())
+        }
     }
 }

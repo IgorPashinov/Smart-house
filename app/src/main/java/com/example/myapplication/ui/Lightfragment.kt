@@ -27,7 +27,7 @@ class Lightfragment:Fragment() {
 
 
 
-       // return null
+        // return null
 
         val view = inflater.inflate(R.layout.fragment_light, container, false)
 
@@ -43,15 +43,13 @@ class Lightfragment:Fragment() {
             }
         }
         btn.setOnClickListener{
-            lifecycleScope.launch(Dispatchers.IO) {
+            lifecycleScope.launch {
                 WebClient.setTurnoforturnon(Turnoforturnon(!lamp, 100))
-                lifecycleScope.launch(Dispatchers.Main) {
-                    try {
-                        update()
-                    } catch (e: HttpException) {
-                        Log.d("lightFragment", "error Http")
-                    }
-                }
+                    // try {
+                  //  WebClient.setIllumination(DataIlumination(lamp, minValue.toFloat(), maxValue.toFloat()))
+               // } catch(e: HttpException) {
+                 //   Log.d("lightFragment", "error Http")
+               // }
 
             }
 
@@ -61,21 +59,22 @@ class Lightfragment:Fragment() {
 
 
     fun update() {
-        Log.v("CytckCheck", "1")
-        lifecycleScope.launch(Dispatchers.IO) {
-            Log.v("CytckCheck", "2")
+        lifecycleScope.launch {
             val state = WebClient.getTurnoforturnon()
             lamp = state.state
-            launch(Dispatchers.Main) {
-                Log.v("CytckCheck", "3")
-                if (lamp) {
-                    btn.text = "Вкл"
-                } else {
-                    btn.text = "Выкл"
-                }
+            if (lamp) {
+                btn.text = "Вкл"
+            } else {
+                btn.text = "Выкл"
+            }
+            try {
                 val illumination = WebClient.getIllumination()
+                rangeSeekbar1.setMinStartValue(0f)
+                rangeSeekbar1.setMaxStartValue(100f)
                 rangeSeekbar1.setMinValue(illumination.minIllumination)
                 rangeSeekbar1.setMaxValue(illumination.maxIllumination)
+            } catch (e: HttpException) {
+                Log.d("lightFragment", "error Http")
             }
         }
 
