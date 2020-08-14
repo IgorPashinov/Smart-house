@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.getSystemService
 import androidx.core.graphics.drawable.toBitmap
 import coil.Coil
 import coil.request.GetRequest
@@ -30,9 +31,9 @@ class MessagingService : FirebaseMessagingService() {
                 "Уведомления",
                 NotificationManager.IMPORTANCE_HIGH
             )
-         /*   getSystemService<NotificationManager>()
+           getSystemService<NotificationManager>()
                 ?.createNotificationChannel(notificationChannel)
-                */
+
 
         }
 
@@ -77,7 +78,15 @@ class MessagingService : FirebaseMessagingService() {
 
 
     fun showHumidifierNotification(msg: RemoteMessage){
-
+        val date = msg.data["date"] ?: return // Параметры обязательные, если не хватает,
+        GlobalScope.launch {
+            val notification = NotificationCompat.Builder(this@MessagingService, "notifications")
+                .setContentTitle("Закончилась вода: $date") // Заголовок уведомления
+                .setContentText("Наполните")
+                .setSmallIcon(R.drawable.ic_baseline_home_24) // Иконка, она обязательна
+                .build()
+            notificationManager.notify(date.hashCode(), notification) // Показываем его
+        }
     }
     override fun onNewToken(token: String) {
         // Создать уведомление и показать его

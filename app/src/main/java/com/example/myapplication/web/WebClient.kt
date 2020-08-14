@@ -144,6 +144,11 @@ object WebClient {
             api.getvlaznosthistory()
         }
     }
+    suspend fun getdavleniehistory(): ClimateHistory {
+        return withContext(Dispatchers.IO) {
+            api.getdavleniehistory()
+        }
+    }
     suspend fun getCO2history(): ClimateHistory {
         return withContext(Dispatchers.IO) {
             api.getCO2history()

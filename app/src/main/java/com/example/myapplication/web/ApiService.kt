@@ -79,6 +79,9 @@ interface ApiService {
     @GET("get/CO2/history")
     suspend fun getCO2history(): ClimateHistory
 
+    @GET("get/davlenie/history")
+    suspend fun getdavleniehistory(): ClimateHistory
+
     @GET( "get/climate")
     suspend fun getclimate():Climate
 }
