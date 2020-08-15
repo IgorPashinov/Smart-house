@@ -29,5 +29,8 @@ class MebuClimate:Fragment() {
         buttongraphs.setOnClickListener {
             (activity as? MainActivity)?.add(TemperaturaFragment())
         }
+        buttonznachenia.setOnClickListener {
+            (activity as? MainActivity)?.add(ZnacheniaClimate())
+        }
     }
 }

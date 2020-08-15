@@ -164,4 +164,14 @@ object WebClient {
             api.getclimate()
         }
     }
+    suspend fun getclimateznacheniavlasnost(): ZnacheniaVlaznost {
+        return withContext(Dispatchers.IO) {
+            api.getclimateznacheniavlasnost()
+        }
+    }
+    suspend fun getclimateznacheniatemperatura(): ZnacheniaTemperatura {
+        return withContext(Dispatchers.IO) {
+            api.getclimateznacheniatemperatura()
+        }
+    }
 }

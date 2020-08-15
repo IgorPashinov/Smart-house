@@ -67,8 +67,8 @@ interface ApiService {
     @GET("get/light/history")
     suspend fun getLightHistory(): DataLightAll
 
-    @POST ("/set/token")
-    suspend fun setToken(@Body token:TokenRequest)
+    @POST("/set/token")
+    suspend fun setToken(@Body token: TokenRequest)
 
     @GET("get/temperatura/history")
     suspend fun gettemperaturahistory(): ClimateHistory
@@ -82,6 +82,12 @@ interface ApiService {
     @GET("get/davlenie/history")
     suspend fun getdavleniehistory(): ClimateHistory
 
-    @GET( "get/climate")
-    suspend fun getclimate():Climate
+    @GET("get/climate")
+    suspend fun getclimate(): Climate
+
+    @GET("get/climate/znachenia/temperatura")
+    suspend fun getclimateznacheniatemperatura(): ZnacheniaTemperatura
+
+    @GET("get/climate/znachenia/vlaznost")
+    suspend fun getclimateznacheniavlasnost(): ZnacheniaVlaznost
 }

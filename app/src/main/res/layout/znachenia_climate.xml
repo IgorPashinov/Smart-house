@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:paddingTop="20dp"
+        android:text="Последнее значение температуры"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/znacheniatemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:paddingTop="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/znacheniavlaznost"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:paddingTop="20dp"
+        android:text="Последнее значение влажности"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>
