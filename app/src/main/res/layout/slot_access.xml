@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingTop="20dp"
-        android:text="Access"
+        android:text="Доступ"
         android:textAlignment="center"
+        android:textSize="20sp"
 
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
