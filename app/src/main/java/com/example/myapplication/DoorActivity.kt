@@ -4,8 +4,8 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.provider.MediaStore.Images.Media.getBitmap
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import coil.Coil
 import coil.request.GetRequest
