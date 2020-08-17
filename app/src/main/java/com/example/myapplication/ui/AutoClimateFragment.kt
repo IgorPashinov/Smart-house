@@ -26,10 +26,12 @@ class AutoClimateFragment : Fragment() {
         lifecycleScope.launch {
             val temperatura = WebClient.getclimateautomodetemperatura()
             val vlaznostc = WebClient.getclimateautomodevlaznost()
-            rangeSeekbar2.setMinValue(temperatura.min_temperatura.toFloat())
-            rangeSeekbar2.setMinValue(temperatura.max_temperatura.toFloat())
-            rangeSeekbar3.setMinValue(vlaznostc.min_vlasnost.toFloat())
-            rangeSeekbar3.setMinValue(vlaznostc.max_vlasnost.toFloat())
+            rangeSeekbar2.setMinStartValue(temperatura.min_temperatura.toFloat())
+                .setMaxStartValue(temperatura.max_temperatura.toFloat()).apply()
+
+            rangeSeekbar3.setMinStartValue(vlaznostc.min_vlazhnost.toFloat())
+            .setMaxStartValue(vlaznostc.max_vlazhnost.toFloat()).apply()
+
         }
     }
 
@@ -57,5 +59,7 @@ class AutoClimateFragment : Fragment() {
             }
 
         }
+        rangeSeekbar2.setMaxValue(100f).setMinValue(18f).apply()
+
     }
 }

@@ -1,9 +1,12 @@
 package com.example.myapplication.data
 
+import com.google.gson.annotations.SerializedName
+
 class Climate (
-    val temperatura: Int,
-    val vlaznost: Int,
-    val davlenie: Int,
-    val co2: Int
+    @SerializedName("temperatura in")
+    val temperatura: Float,
+    val vlaznost: Float,
+    val davlenie: Float,
+    val CO2: Float
 )
 

@@ -64,7 +64,8 @@ class Lightfragment:Fragment() {
             lamp = state.state
             if (lamp) {
                 btn.text = "Вкл"
-            } else {
+            }
+            else {
                 btn.text = "Выкл"
             }
             try {

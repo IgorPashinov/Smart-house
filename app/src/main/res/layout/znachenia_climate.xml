@@ -7,8 +7,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:paddingTop="20dp"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
         android:text="Последнее значение температуры"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary" />
@@ -16,17 +16,56 @@
     <TextView
         android:id="@+id/znacheniatemperatura"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:paddingTop="20dp"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:text="Последнее значение влажности"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/znacheniavlaznost"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:paddingTop="20dp"
-        android:text="Последнее значение влажности"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:text="Последнее значение давления"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/znacheniadavlenya"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
+        android:text="Последнее значение CO2"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/znacheniaCO2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingTop="8dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary" />
 
