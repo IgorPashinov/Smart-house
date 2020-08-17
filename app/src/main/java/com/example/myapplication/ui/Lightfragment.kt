@@ -44,7 +44,7 @@ class Lightfragment:Fragment() {
         }
         btn.setOnClickListener{
             lifecycleScope.launch {
-                WebClient.setTurnoforturnon(Turnoforturnon(!lamp, 100))
+                WebClient.setTurnoforturnon(Turnoforturnon(lamp, 100))
                     // try {
                   //  WebClient.setIllumination(DataIlumination(lamp, minValue.toFloat(), maxValue.toFloat()))
                // } catch(e: HttpException) {
